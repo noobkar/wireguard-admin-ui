@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="loginPage">
+    <div class="container">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Server List Page -->
+  <div id="serverListPage" style="display: none;">
+  
+    <div class="main-content">
+      <h2>Server List</h2>
+      <button class="add-server-btn" onclick="openAddServerDialog()">Add Server</button>
+      <table id="serverTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Flag</th>
+            <th>IP</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Server rows will be dynamically populated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Add Server Dialog -->
+<div id="addServerDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeAddServerDialog()">&times;</span>
+      <h3>Add Server</h3>
+      <input type="text" id="serverName" placeholder="Server Name" required>
+      <input type="file" id="serverFlagImage" accept="image/*" required>
+      <input type="text" id="serverIP" placeholder="Server IP" required>
+      <input type="text" id="serverURL" placeholder="Server URL" required>
+      <button onclick="addServer()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Edit Server Dialog -->
+  <div id="editServerDialog" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeEditServerDialog()">&times;</span>
+      <h3>Edit Server</h3>
+      <form id="editServerForm">
+        <input type="text" id="editServerName" placeholder="Server Name" required>
+        <input type="text" id="editServerFlag" placeholder="Server Flag" required>
+        <input type="text" id="editServerIP" placeholder="Server IP" required>
+        <input type="text" id="editServerURL" placeholder="Server URL" required>
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
